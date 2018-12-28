@@ -47,7 +47,7 @@ function updateHTMLGuesses() {
 }
 
 function checkLetter() {
-  var letter = (document.getElementById("guessInput").value.toLowerCase());
+  var letter = (guessInputElement.value.toLowerCase());
   // console.log(letter);
   if (alphaArr.includes(letter.toLowerCase())) {
     // console.log("that's a letter!");
@@ -56,7 +56,7 @@ function checkLetter() {
     // console.log("Sorry letters only!");
     document.getElementById("message").innerHTML = "Sorry Letters Only";
   }
-  document.getElementById("guessInput").value = "";
+  guessInputElement.value = "";
 }
 
 
