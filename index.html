@@ -8,20 +8,22 @@
 </head>
 
 <body>
-  <div id="gameTitle">Hangman</div>
-  <div id="gallows"></div>
-  <div id="guessed">
-    <h3>Guessed Letters</h3>
-    <h2 id="guessedLetters"></h2>
+  <div id="container">
+    <div id="gameTitle">Hangman</div>
+    <div id="gallows"></div>
+    <div id="guessed">
+      <h3>Guessed Letters</h3>
+      <h2 id="guessedLetters"></h2>
+    </div>
+    <div id="word">
+      <h1 id="theWord"></h2>
+    </div>
+    <br />
+    <div id="guessDiv">
+      <input type="text" id="guessInput" maxlength="1" />
+      <button onclick="checkLetter()">Check Letter</button>
+    </div>
+    <div id="message">Message</div>
   </div>
-  <div id="word">
-    <h1 id="theWord"></h2>
-  </div>
-  <br />
-  <div id="guessDiv">
-    <input type="text" id="guessInput" maxlength="1" />
-    <button onclick="checkLetter()">Check Letter</button>
-  </div>
-  <div id="message">Message</div>
 </body>
 </html>
