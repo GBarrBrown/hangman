@@ -7,9 +7,20 @@ var myWord = "";
 var guesses = [];
 var displayWord = "";
 var alphaArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var guessInputElement;
 
-var guessInputElement = document.getElementById("guessInput");
 
+function setUpGame() {
+  // console.log("initialise game")
+  guessInputElement = document.getElementById("guessInput");
+  guessInputElement.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      document.getElementById("check-btn").click();
+    }
+  });
+  getWord();
+  createDisplayWord();
+}
 
 function getWord() {
   myWord = wordList[Math.floor(Math.random()*wordList.length)];
@@ -84,9 +95,3 @@ function displayHangman() {
   // if () {}
 }
 
-function setUpGame() {
-  // console.log("initialise game")
-  getWord();
-  createDisplayWord();
-
-}
