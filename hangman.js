@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', setUpGame)
 
 var gameLost = false;
 var lives = 3;
-var wordList = ["cat", "dog", "Bike", "Milk"];
-var myWord = "dog";
+var wordList = ["cat", "dog", "bike", "milk"]; // make sure the wordList is all lowercase :)
+var myWord = "";
 var guesses = [];
 var displayWord = "";
 var alphaArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -56,6 +56,7 @@ function createDisplayWord() {
   }
 
   console.log(displayWord + " Testing after");  
+  document.getElementById("theWord").innerHTML = displayWord;
 }
 
 
@@ -80,5 +81,7 @@ function displayHangman() {
 
 function setUpGame() {
   // console.log("initialise game")
-  // getWord();
+  getWord();
+  createDisplayWord();
+
 }
