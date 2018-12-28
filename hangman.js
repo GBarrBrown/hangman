@@ -21,6 +21,7 @@ function alreadyGuessed(letter) {
   if (!guesses.includes(letter)) {
     console.log("not already guessed, added to guessed letters and checking if in word");
     guesses.push(letter);
+    updateHTMLGuesses();
     // console.log(guesses);
     inWord(letter);
   } else {
@@ -29,6 +30,10 @@ function alreadyGuessed(letter) {
   }
 }
 
+
+function updateHTMLGuesses() {
+  document.getElementById("guessedLetters").innerHTML = guesses.join(" ");
+}
 
 function checkLetter() {
   var letter = (document.getElementById("guessInput").value.toLowerCase());
