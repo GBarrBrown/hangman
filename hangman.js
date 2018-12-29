@@ -130,8 +130,8 @@ function displayHangman() {
     case 1:
       hangmanImg = "Spaghetti"
       break;
-    case 1:
-      hangmanImg = "Spaghetti"
+    case 0:
+      hangmanImg = "      _______\n     |/      |\n     |      (_)\n     |      /|\\\n     |       |\n     |      / \\\n     |\n    _|___"
       break;
   }
   document.getElementById("gallows").innerHTML = hangmanImg;
