@@ -13,3 +13,14 @@
 #container {
   text-align: center;
 }
+
+
+#gallows {
+  display: inline-block;
+  width: 16em;
+  font-family: monospace;
+  height: 8em;
+  white-space: pre;
+  text-align: left;
+  font-weight: bold;
+}

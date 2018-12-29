@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', setUpGame)
 
 var gameLost = false;
-var lives = 3;
+var lives = 12;
 var wordList = ["cat", "dog", "bike", "milk"]; // make sure the wordList is all lowercase :)
 var myWord = "";
 var guesses = [];
@@ -92,6 +92,48 @@ function inWord(letter) {
 
 
 function displayHangman() {
-  // if () {}
+  switch (lives) {
+    case 12:
+      hangmanImg = "      _______\n     |/      |\n     |      (_)\n     |      /|\\\n     |       |\n     |      / \\\n     |\n    _|___"
+
+      break;
+    case 11:
+      hangmanImg = ""
+      break;
+    case 10:
+      hangmanImg = "Spaghetti"
+      break;
+    case 9:
+      hangmanImg = "Spaghetti"
+      break;
+    case 8:
+      hangmanImg = "Spaghetti"
+      break;
+    case 7:
+      hangmanImg = "Spaghetti"
+      break;
+    case 6:
+      hangmanImg = "Spaghetti"
+      break;
+    case 5:
+      hangmanImg = "Spaghetti"
+      break;
+    case 4:
+      hangmanImg = "Spaghetti"
+      break;
+    case 3:
+      hangmanImg = "Spaghetti"
+      break;
+    case 2:
+      hangmanImg = "Spaghetti"
+      break;
+    case 1:
+      hangmanImg = "Spaghetti"
+      break;
+    case 1:
+      hangmanImg = "Spaghetti"
+      break;
+  }
+  document.getElementById("gallows").innerHTML = hangmanImg;
 }
 
