@@ -62,7 +62,7 @@ function checkLetter() {
 
 function createDisplayWord() {
   displayWord = "";
-  console.log(displayWord + " Testing before");
+  // console.log(displayWord + " Testing before");
   for (var i = 0; i < myWord.length; i++) {
     if (guesses.includes(myWord[i])) {
       displayWord += (myWord[i] + " ");
@@ -71,7 +71,7 @@ function createDisplayWord() {
     }
   }
 
-  console.log(displayWord + " Testing after");  
+  // console.log(displayWord + " Testing after");  
   document.getElementById("theWord").innerHTML = displayWord;
 }
 
@@ -81,7 +81,7 @@ function inWord(letter) {
     createDisplayWord();
   } else {
     livesLeft--;
-
+    displayHangman();
     console.log("Lives Left: " + livesLeft);
     if (livesLeft == 0) {
       gameLost = true;
