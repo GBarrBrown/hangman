@@ -1,5 +1,9 @@
-body{
+body {
   font-family: 'Sarabun', sans-serif;
+}
+
+#gameTitle {
+  font-weight: 900;
 }
 
 #guessedLetters {

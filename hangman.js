@@ -9,9 +9,19 @@ var displayWord = "";
 var alphaArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var guessInputElement;
 
-
 function setUpGame() {
   // console.log("initialise game")
+  if (document.getElementById("playAgain").style.display === "block") {
+    gameLost = false;
+    livesLeft = 10;
+    myWord = "";
+    guesses = [];
+    displayWord = "";
+    document.getElementById("playAgain").style.display = "none";
+    document.getElementById("guessDiv").style.display = "block";
+    updateHTMLGuesses();
+  }
+
   guessInputElement = document.getElementById("guessInput");
   guessInputElement.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
@@ -84,13 +94,24 @@ function inWord(letter) {
     livesLeft--;
     displayHangman();
     console.log("Lives Left: " + livesLeft);
-    if (livesLeft == 0) {
+    if (livesLeft == -1) {
       gameLost = true;
+      gameOver();
       console.log("(x_x)")
     }
   }
 }
 
+
+function gameOver() {
+  document.getElementById("guessDiv").style.display = "none";
+  if (gameLost) {
+    document.getElementById("message").innerHTML = "Game Over! The word you were looking for was: " + myWord;
+  } else {
+    document.getElementById("message").innerHTML = "Congratulations! You Won :)";
+  }
+  document.getElementById("playAgain").style.display = "block";
+}
 
 function displayHangman() {
   switch (livesLeft) {
