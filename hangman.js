@@ -21,7 +21,7 @@ function setUpGame() {
     document.getElementById("guessDiv").style.display = "block";
     updateHTMLGuesses();
   }
-
+  document.getElementById("playAgain").style.display = "none";
   guessInputElement = document.getElementById("guessInput");
   guessInputElement.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
