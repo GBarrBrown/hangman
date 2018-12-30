@@ -47,6 +47,7 @@ function alreadyGuessed(letter) {
     // console.log(guesses);
     inWord(letter);
   } else {
+    document.getElementById("message").innerHTML = "Oops, You've already guessed that letter.";
     console.log("already in guesses");
     console.log(guesses);
   }
@@ -62,6 +63,7 @@ function checkLetter() {
   // console.log(letter);
   if (alphaArr.includes(letter.toLowerCase())) {
     // console.log("that's a letter!");
+    document.getElementById("message").innerHTML = "";
     alreadyGuessed(letter);
   } else {
     // console.log("Sorry letters only!");
@@ -84,6 +86,10 @@ function createDisplayWord() {
 
   // console.log(displayWord + " Testing after");  
   document.getElementById("theWord").innerHTML = displayWord;
+  if(displayWord.split(" ").join("") == myWord) {
+    // console.log("split.join works");
+    gameOver();
+  }
 }
 
 
