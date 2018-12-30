@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', setUpGame)
 
 var gameLost = false;
 var livesLeft = 10;
-var wordList = ["cat", "dog", "bike", "milk"]; // make sure the wordList is all lowercase :)
+var wordList = ["cat", "dog", "bike", "milk", "space", "rhythm", "class", "gold", "grain", "form", "minute", "rat", "chess", "lamp", "way", "button", "stew", "hour", "hospital", "wilderness", "rest"]; // make sure the wordList is all lowercase :)
 var myWord = "";
 var guesses = [];
 var displayWord = "";
