@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', setUpGame)
 
 var gameLost = false;
-var lives = 12;
+var livesLeft = 10;
 var wordList = ["cat", "dog", "bike", "milk"]; // make sure the wordList is all lowercase :)
 var myWord = "";
 var guesses = [];
@@ -80,10 +80,10 @@ function inWord(letter) {
   if (myWord.indexOf(letter) != -1) {
     createDisplayWord();
   } else {
-    lives--;
+    livesLeft--;
 
-    console.log("Lives: " + lives);
-    if (lives == 0) {
+    console.log("Lives Left: " + livesLeft);
+    if (livesLeft == 0) {
       gameLost = true;
       console.log("(x_x)")
     }
@@ -92,46 +92,43 @@ function inWord(letter) {
 
 
 function displayHangman() {
-  switch (lives) {
-    case 12:
-      hangmanImg = "      _______\n     |/      |\n     |      (_)\n     |      /|\\\n     |       |\n     |      / \\\n     |\n    _|___"
+  switch (livesLeft) {
+    case 10:
+      hangmanImg = "\n\n\n\n\n\n           [‾‾‾]\n           [___]";
 
       break;
-    case 11:
-      hangmanImg = ""
-      break;
-    case 10:
-      hangmanImg = "Spaghetti"
-      break;
     case 9:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "\n\n\n\n\n\n           [‾‾‾]\n    _____  [___]";
       break;
     case 8:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "\n     |\n     |\n     |\n     |\n     |\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 7:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |\n     |\n     |\n     |\n     |\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 6:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |/\n     |\n     |\n     |\n     |\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 5:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |/\n     |\n     |       |\n     |       |\n     |\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 4:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |/\n     |\n     |      \\|\n     |       |\n     |\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 3:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |/\n     |\n     |      \\|/\n     |       |\n     |\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 2:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |/\n     |\n     |      \\|/\n     |       |\n     |      /\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 1:
-      hangmanImg = "Spaghetti"
+      hangmanImg = "      _______\n     |/\n     |\n     |      \\|/\n     |       |\n     |      / \\\n     |     [‾‾‾]\n    _|___  [___]";
       break;
     case 0:
-      hangmanImg = "      _______\n     |/      |\n     |      (_)\n     |      /|\\\n     |       |\n     |      / \\\n     |\n    _|___"
+      hangmanImg = "      _______\n     |/\n     |      (_)\n     |      \\|/\n     |       |\n     |      / \\\n     |     [‾‾‾]\n    _|___  [___]";
+      break;
+    case -1:
+      hangmanImg = "      _______\n     |/      |\n     |      (_)\n     |      \\|/\n     |       |\n     |      / \\\n     |          [‾‾‾]\n    _|___       [___]"
       break;
   }
   document.getElementById("gallows").innerHTML = hangmanImg;
