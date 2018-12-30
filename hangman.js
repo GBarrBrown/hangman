@@ -20,6 +20,7 @@ function setUpGame() {
   });
   getWord();
   createDisplayWord();
+  displayHangman();
 }
 
 function getWord() {
@@ -95,7 +96,6 @@ function displayHangman() {
   switch (livesLeft) {
     case 10:
       hangmanImg = "\n\n\n\n\n\n           [‾‾‾]\n           [___]";
-
       break;
     case 9:
       hangmanImg = "\n\n\n\n\n\n           [‾‾‾]\n    _____  [___]";
