@@ -24,8 +24,9 @@ function setUpGame() {
   document.getElementById("playAgain").style.display = "none";
   guessInputElement = document.getElementById("guessInput");
   guessInputElement.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && guessInputElement.value != "") {
       document.getElementById("check-btn").click();
+      // console.log("test");
     }
   });
   getWord();
